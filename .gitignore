@@ -1,0 +1,4 @@
+*isolated*/
+**/.vscode/*.db*
+.catkin_workspace
+abseil-cpp/
