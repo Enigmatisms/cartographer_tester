@@ -17,7 +17,7 @@
 set -o errexit
 set -o verbose
 
-# git clone git@github.com:abseil/abseil-cpp.git       
+git clone git@github.com:abseil/abseil-cpp.git       
 cd abseil-cpp
 git checkout c6954897f7ece5011f0126db9117361dc1a6ff36
 mkdir build
