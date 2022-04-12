@@ -25,3 +25,9 @@ src/cartographer/scripts/install_abseil.sh		# installing abseil from source
 sudo chmod +x ./make.sh
 ./make.sh
 ```
+
+---
+
+## Problems
+
+For some of the problems that could be encountered during compilation (like missing Lua or ABSL error, etc.), you can refer to [(Chinese Blog)Cartographer编译问题整理](https://enigmatisms.github.io/2022/04/11/Cartographer%E7%BC%96%E8%AF%91%E9%97%AE%E9%A2%98%E6%95%B4%E7%90%86/) of mine for some inspiration.
