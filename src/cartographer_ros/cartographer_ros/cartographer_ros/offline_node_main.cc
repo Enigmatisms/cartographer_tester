@@ -87,8 +87,8 @@ int main(int argc, char** argv) {
   std::string bag_name = bag_filename.substr(slash_pos);
   size_t dot_pos = bag_name.find_last_of(".");
   bag_name = bag_name.substr(0, dot_pos);
-  std::string output_dir = "/home/wy/slam/trajectories" + bag_name + "/";
-  std::string output_path = output_dir + "carto_odom_";
+  std::string output_dir = "/home/stn/slam/trajectories" + bag_name + "/";
+  std::string output_path = output_dir + "carto_";
   std::string command = "scrot -b " + output_dir + "thumbnails/carto_%Y-%m-%d-%H-%M-%S.png";
   system(command.c_str());
   if (!fs::exists(output_dir))

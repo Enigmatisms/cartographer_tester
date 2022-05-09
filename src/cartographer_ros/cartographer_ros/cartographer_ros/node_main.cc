@@ -68,7 +68,9 @@ void Run() {
     node.StartTrajectoryWithDefaultTopics(trajectory_options);
   }
 
-  ::ros::spin();
+  while(::ros::ok()) {
+    ::ros::spinOnce();
+  }
 
   node.FinishAllTrajectories();
   node.RunFinalOptimization();

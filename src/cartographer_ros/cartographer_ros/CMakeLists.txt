@@ -28,6 +28,7 @@ set(PACKAGE_DEPENDENCIES
   roslib
   sensor_msgs
   std_msgs
+  tf
   tf2
   tf2_eigen
   tf2_ros
@@ -197,6 +198,7 @@ foreach(HDR ${HDRS})
   )
 endforeach()
 
+include_directories(${catkin_INCLUDE_DIRS})
 add_executable(stream_convert cartographer_ros/stream_convert.cc)
 target_link_libraries(stream_convert ${catkin_LIBRARIES} cartographer_ros)
 

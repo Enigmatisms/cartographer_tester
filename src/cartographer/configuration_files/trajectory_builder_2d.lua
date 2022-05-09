@@ -36,10 +36,13 @@ TRAJECTORY_BUILDER_2D = {
 
   use_online_correlative_scan_matching = true,
   real_time_correlative_scan_matcher = {
-    linear_search_window = 0.2,
+    linear_search_window = 0.3,
+    --angular_search_window = math.rad(32.),
     angular_search_window = math.rad(25.),
-    translation_delta_cost_weight = 1e-1,
-    rotation_delta_cost_weight = 3e-1,
+    --translation_delta_cost_weight = 1e-1,
+    translation_delta_cost_weight = 16,
+    --rotation_delta_cost_weight = 2e-1,
+    rotation_delta_cost_weight = 1e-1,
   },
 
   ceres_scan_matcher = {
@@ -48,15 +51,15 @@ TRAJECTORY_BUILDER_2D = {
     rotation_weight = 40.,
     ceres_solver_options = {
       use_nonmonotonic_steps = false,
-      max_num_iterations = 50,
-      num_threads = 8,
+      max_num_iterations = 20,
+      num_threads = 1,
     },
   },
 
   motion_filter = {
-    max_time_seconds = 4.,
-    max_distance_meters = 0.15,
-    max_angle_radians = math.rad(0.8),
+    max_time_seconds = 3.,
+    max_distance_meters = 0.1,
+    max_angle_radians = math.rad(0.6),
   },
 
   -- TODO(schwoere,wohe): Remove this constant. This is only kept for ROS.
@@ -95,7 +98,7 @@ TRAJECTORY_BUILDER_2D = {
       probability_grid_range_data_inserter = {
         insert_free_space = true,
         hit_probability = 0.7,
-        miss_probability = 0.45,
+        miss_probability = 0.48,
       },
       tsdf_range_data_inserter = {
         truncation_distance = 0.3,

@@ -84,7 +84,7 @@ int cartoTrajOutputCheck(std::string path) {
   }
   return std::count_if(directory_iterator(path), directory_iterator{}, [](const fs::path& path){
     std::string path_name = path.string();
-    return fs::is_regular_file(path) && (path_name.find("carto_odom_") != std::string::npos);
+    return fs::is_regular_file(path) && (path_name.find("carto_") != std::string::npos);
   });
 }
 
@@ -118,8 +118,8 @@ bool RunOfflineNode(const MapBuilderFactory& map_builder_factory, std::string& b
   std::string bag_filename = bag_name.substr(slash_pos);
   size_t dot_pos = bag_filename.find_last_of(".");
   bag_filename = bag_filename.substr(0, dot_pos);
-  std::string output_dir = "/home/wy/slam/trajectories" + bag_filename + "/";
-  if (cartoTrajOutputCheck(output_dir) >= 6) {
+  std::string output_dir = "/home/stn/slam/trajectories" + bag_filename + "/";
+  if (cartoTrajOutputCheck(output_dir) >= 10) {
     printf("This bag might already been run before. Exiting\n");
     return false;
   }
